@@ -1,0 +1,410 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+.bg {
+    background-image: url(train4.png);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar {
+    background-color: #1b2631;
+    overflow: hidden;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+.content {
+    margin-top: 60px; /* Push content down to avoid overlap with the fixed navbar */
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-left: 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.navbar a:hover {
+    background-color: #ddd;
+}
+
+.home-page .navbar a,
+.schedules-page .navbar a,
+.contact-page .navbar a,
+.home-page .navbar .nav-left-text,
+.schedules-page .navbar .nav-left-text,
+.contact-page .navbar .nav-left-text,
+.home-page .navbar .search-container,
+.schedules-page .navbar .search-container,
+.contact-page .navbar .search-container {
+    color: white;
+}
+.booking-page .navbar a,
+.booking-page .navbar .nav-left-text,
+.booking-page .navbar .search-container {
+   color: white;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.search-container input[type=text] {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 3px 0 0 3px;
+}
+.search-container button {
+    padding: 5px 10px;
+    background: #1b2631;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+}
+.search-container button:hover {
+    background: #ccc;
+}
+#bookTicketText {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: #3498db;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#bookTicketText:hover {
+    background-color: #2980b9;
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    justify-content: center;  
+    align-items: center; 
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    color: #3498db;
+    margin-bottom: 30px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: #2980b9;
+}
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+#bookingDetails {
+    display: none;
+}
+#trainImage {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.progress-step {
+    flex: 1;
+    text-align: center;
+    color: #bdc3c7;
+}
+.progress-step.active {
+    color: #3498db;
+}
+.progress-step i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.navbar .nav-left-text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    left: 20px;
+    animation: glowPurple 1s ease-in-out infinite alternate;
+}
+@keyframes glowPurple {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #9b59b6, 0 0 20px #9b59b6, 0 0 35px #9b59b6, 0 0 40px #9b59b6, 0 0 50px #9b59b6;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #9b59b6, 0 0 40px #9b59b6, 0 0 50px #9b59b6, 0 0 60px #9b59b6, 0 0 70px #9b59b6;
+    }
+}
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.details-column {
+    width: 48%;
+}
+
+.details-column h3 {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#bookingDetails p, #ticketReceipt p {
+    margin-bottom: 10px;
+}
+
+#bookingDetails strong, #ticketReceipt strong {
+    color: #2c3e50;
+}
+
+#ticketReceipt {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#ticketReceipt h2 {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+/* Apply custom background for Contact page */
+.custom-bg {
+    background-image: url('train5.png'); /* Add your specific image file */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Custom styles for contact page */
+.large-text {
+    font-size: 36px; /* Adjust the size as needed */
+    color: #3498db; 
+    font-weight: bold; 
+    text-align: center;
+}
+/* Apply custom background for Contact page */
+.schedule-bg {
+    background-image: url('train3.png'); /* Add your specific image file */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Custom styles for contact page */
+.large-text {
+    font-size: 36px; /* Adjust the size as needed */
+    color: #3498db; 
+    font-weight: bold; 
+    text-align: center;
+}
+.home-bg {
+    background-image: url('train2.png'); /* Add your specific image file */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Custom styles for contact page */
+.large-text {
+    font-size: 36px; /* Adjust the size as needed */
+    color: #3498db; 
+    font-weight: bold; 
+    text-align: center;
+}
+
+
+.home-page .content {
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.home-page .content h1.glow-text {
+    color: black;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.home-page .content p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Styles for the contact page */
+.contact-page .content {
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-page .content h1.glow-text {
+    color: black;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-page .content p.large-text {
+    color: white;
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.schedules-page .navbar a,
+.schedules-page .navbar .nav-left-text,
+.schedules-page .navbar .search-container,
+.schedules-page .navbar .search-container input,
+.schedules-page .navbar .search-container button {
+    color: white;
+}
+
+.schedules-page .content {
+    color: white;
+    padding: 20px;
+}
+
+.schedules-page .content h2.glow-text {
+    color: black;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+}
+
+.schedules-page .table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.schedules-page .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.schedules-page .schedule-table th,
+.schedules-page .schedule-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+.schedules-page .schedule-table thead {
+    background-color: #3498db;
+    color: white;
+}
+
+.schedules-page .schedule-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.schedules-page .schedule-table tbody tr:nth-child(even) {
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+.schedules-page .schedule-table tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 600px) {
+    .schedules-page .schedule-table {
+        font-size: 14px;
+    }
+
+    .schedules-page .schedule-table th,
+    .schedules-page .schedule-table td {
+        padding: 8px 10px;
+    }
+}
